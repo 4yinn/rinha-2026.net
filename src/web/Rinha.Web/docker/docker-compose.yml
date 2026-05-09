@@ -1,0 +1,47 @@
+services:
+  api01: &api
+    container_name: api01
+    build:
+      context: ../../../..
+      dockerfile: src/web/Rinha.Web/docker/Dockerfile
+    ports:
+      - "9001:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.4"
+          memory: "160M"
+  
+  
+  api02:
+    <<: *api
+    container_name: api02
+    ports:
+      - "9002:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.4"
+          memory: "160M"
+
+  lb:
+    container_name: lb
+    image: nginx:1.28-alpine
+    ports:
+      - "9999:9999"
+    volumes:
+      - "../server/nginx.conf:/etc/nginx/nginx.conf:ro"
+    depends_on:
+      - api01
+      - api02
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "30M"
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    security_opt:
+      - seccomp:unconfined

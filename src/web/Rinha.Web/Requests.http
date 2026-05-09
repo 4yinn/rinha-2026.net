@@ -1,0 +1,8 @@
+### GET
+GET http://localhost:9999/ready
+
+###
+### POST
+POST http://localhost:9999/fraud-score
+###
+
