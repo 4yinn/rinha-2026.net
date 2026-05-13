@@ -1,7 +1,8 @@
 <Solution>
   <Folder Name="/src/" />
-  <Folder Name="/src/domain/">
-    <Project Path="src/domain/Rinha.Core/Rinha.Core.csproj" />
+  <Folder Name="/src/tests/" />
+  <Folder Name="/src/tests/xunit/">
+    <Project Path="src/tests/xunit/Rinha.XUnit/Rinha.XUnit.csproj" />
   </Folder>
   <Folder Name="/src/web/">
     <Project Path="src/web/Rinha.Web/Rinha.Web.csproj" />

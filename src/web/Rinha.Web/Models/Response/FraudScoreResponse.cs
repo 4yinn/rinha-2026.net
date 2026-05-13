@@ -1,8 +1,8 @@
-namespace Rinha.Web.Payloads;
+namespace Rinha.Web.Models.Response;
 
-public sealed record Response
+public sealed record FraudScoreResponse
 {
-    public bool Approved { get; private set; } = false;
+    public bool Approved { get; private set; }
     public float FraudScore { get; private set; }
 
 

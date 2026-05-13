@@ -8,7 +8,6 @@ RUN apk add --no-cache \
     zlib-dev
 
 COPY src/web/Rinha.Web/*.csproj src/web/Rinha.Web/
-COPY src/domain/Rinha.Core/*.csproj src/domain/Rinha.Core/
 
 RUN dotnet restore src/web/Rinha.Web/Rinha.Web.csproj \
     -r linux-musl-x64

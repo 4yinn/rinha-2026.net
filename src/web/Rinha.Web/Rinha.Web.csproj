@@ -13,4 +13,8 @@
         <PublishAot>true</PublishAot>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="resources\" />
+    </ItemGroup>
+
 </Project>
